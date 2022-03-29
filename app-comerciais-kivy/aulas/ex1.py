@@ -1,0 +1,67 @@
+print("Frklcedo")
+print()
+#
+nome = input("Seu nome é: ")
+print(f"O seu nome é: [{nome}]")
+print()
+#
+nome = input("nome:")
+idade = int(input("idade:"))
+print(f"O seu nome é <{nome}> e a sua idade é <{idade}>")
+print()
+#
+num = int(input("digite um numero:"))
+print("O número digitado foi:",num)
+print()
+#
+print("Digite três números")
+num1 = int(input("1:"))
+num2 = int(input("2:"))
+num3 = int(input("3:"))
+print("A soma total é:", num1 + num2 + num3)
+print()
+#
+num1 = int(input("Digite um número:"))
+num2 = int(input("Digite um outro número:"))
+print(f"A soma entre <{num1}> e <{num2}> é igual a <{num1 + num2}>")
+print()
+#
+print("Digite as notas das provas por unidade")
+prova1 = float(input("1ª"))
+prova2 = float(input("2ª"))
+prova3 = float(input("3ª"))
+prova4 = float(input("4ª"))
+print("média: %.1f" %((prova1 + prova2 + prova3 + prova4) / 4.0))
+print()
+#
+metros = float(input("Escreva uma medida em metros: "))
+print(f"{metros}m para cm: {metros*100}")
+print()
+#
+num = float(input("Digite um número: "))
+print(f"{num} elevado ao quadrado: {num**2}")
+print(f"{num} elevado ao cubo: {num**3}")
+print()
+#
+print("escreva dois números")
+num1 = float(input("1: "))
+num2 = float(input("2: "))
+print(f"{num1} divido por {num2}: {num1 / num2}")
+print(f"A parte inteira: {num1 // num2}")
+print()
+#
+largura = float(input("escreva a largura de um retângulo:"))
+altura = float(input("escreva a altura de um retângulo:"))
+print("Área total do retângulo:", largura*altura)
+print()
+#
+dias = int(input("digite a quantidade de dias:"))
+horas = int(input("horas:"))
+minutos = int(input("minutos:"))
+segundos = int(input("segundos:"))
+total_segundos = segundos + (minutos * 60) + (horas * (60**2)) + (dias * 24 * (60**2))
+print("segundos totais:", total_segundos)
+print()
+#
+compra = float(input("digite o valor de uma compra: "))
+print("Produto: { valor total: R$%.2f } { valor descontado: R$%.2f}" %(compra, compra * 90 / 100))
