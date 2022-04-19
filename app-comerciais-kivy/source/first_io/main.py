@@ -6,41 +6,51 @@ from kivy.uix.textinput import TextInput
 from kivy.uix.button import Button
 from kivy.core.window import Window
 
-input_text = None
+
+class Program(App):
+
+    def __init__(self, iotext, bttext):
+        super().__init__()
+        self.itext = TextInput(text=iotext)
+        self.bt = Button(text=bttext)
+
+    def click(self):
+        print(self.itext.text)
+
+    def text_input_config(self, h, w, x, y):
+        self.itext.size_hint = None, None
+        self.itext.height = h
+        self.itext.width = w
+        self.itext.x = x
+        self.itext.y = y
+
+    def button_config(self, h, w, x, y):
+        self.bt.size_hint = None, None
+        self.bt.height = h
+        self.bt.width = w
+        self.bt.x = x
+        self.bt.y = y
+
+    def build(self):
+        layout = FloatLayout()
+
+        self.bt.on_press = self.click
+
+        # self.text_input_config(h=300, w=400, x=60, y=250)
+        # self.button_config(h=100, w=200, x=100, y=100)
+
+        layout.add_widget(self.itext)
+        layout.add_widget(self.bt)
+        return layout
 
 
-def click():
-    print(input_text.text)
+# janela = Program()
+janela = Program(iotext="Digite algo aqui", bttext="Clique aqui")
 
-
-def build():
-    layout = FloatLayout()
-
-    global input_text
-    input_text = TextInput(text="Digite algo aqui")
-    input_text.size_hint = None, None
-    input_text.height = 300
-    input_text.width = 400
-    input_text.x = 60
-    input_text.y = 250
-
-    bt = Button(text="Clique aqui")
-    bt.size_hint = None, None
-    bt.height = 100
-    bt.width = 200
-    bt.x = 100
-    bt.y = 100
-    bt.on_press = click
-
-    layout.add_widget(input_text)
-    layout.add_widget(bt)
-    return layout
-
-
-janela = App()
 janela.title = "First Layout"
+janela.text_input_config(h=300, w=400, x=60, y=250)
+janela.button_config(h=100, w=200, x=100, y=100)
 
 Window.size = 600, 600
 
-janela.build = build
 janela.run()
