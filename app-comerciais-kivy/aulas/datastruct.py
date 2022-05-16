@@ -119,9 +119,10 @@ else:
 cores = ["preto", "roxo", "rosa", "verde"]
 while True:
     cor = input("Digite o nome de uma cor (forceexit=0) ")
-    if cor is "0":
+    if cor == "0":
         break
     elif cor in cores:
         print(f"{cor} está contida")
     else:
         print(f"{cor} não está contida")
+

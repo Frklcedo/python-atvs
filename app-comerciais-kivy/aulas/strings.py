@@ -32,7 +32,7 @@ print("ord A", ord("A"))
 print("ord 6", ord("6"))
 
 for c in range(123):
-    print(str(c) , chr(c))
+    print(str(c), chr(c))
 
 #
 s = "Lista de Caracteres"
